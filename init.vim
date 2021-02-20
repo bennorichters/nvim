@@ -16,6 +16,7 @@ Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
 
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 let mapleader=" "
