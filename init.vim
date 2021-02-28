@@ -32,4 +32,5 @@ exec 'source ' . pluginssub . 'tsserver.vim'
 exec 'source ' . pluginssub . 'completion.vim'
 exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'codefmt.vim'
+exec 'source ' . pluginssub . 'netrw.vim'
 
