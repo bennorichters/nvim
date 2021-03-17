@@ -1,6 +1,8 @@
 " Typescript specific
-lua require'lspconfig'.tsserver.setup{}
+" lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.html.setup{}
+lua require'lspconfig'.vuels.setup{}
 
 inoremap <F5> <ESC>:w<CR>:! ts-node --transpile-only %<CR>
 nnoremap <F5> :w<CR>:! ts-node --transpile-only %<CR>

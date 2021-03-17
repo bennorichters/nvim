@@ -14,4 +14,5 @@ require'nvim-treesitter.configs'.setup {
 require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 EOF
 
-
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
