@@ -34,3 +34,4 @@ exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'codefmt.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
 
+" lua require("bnor")
