@@ -6,4 +6,11 @@ M.search_dotfiles = function()
     })
 end
 
+M.my_popup = function()
+  require("popup").create(
+    {'another one', 'another two', 'another three'},
+    {line = 3,col = 25,minwidth = 20}
+  )
+end
+
 return M

@@ -23,15 +23,15 @@ let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-exec 'source ' . pluginssub . 'sets.vim'
-exec 'source ' . pluginssub . 'movelines.vim'
-exec 'source ' . pluginssub . 'split.vim'
-exec 'source ' . pluginssub . 'gruvbox.vim'
-exec 'source ' . pluginssub . 'telescope.vim'
-exec 'source ' . pluginssub . 'tsserver.vim'
-exec 'source ' . pluginssub . 'completion.vim'
-exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'codefmt.vim'
+exec 'source ' . pluginssub . 'completion.vim'
+exec 'source ' . pluginssub . 'gruvbox.vim'
+exec 'source ' . pluginssub . 'keys.vim'
+exec 'source ' . pluginssub . 'movelines.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
+exec 'source ' . pluginssub . 'telescope.vim'
+exec 'source ' . pluginssub . 'treesitter.vim'
+exec 'source ' . pluginssub . 'tsserver.vim'
+exec 'source ' . pluginssub . 'sets.vim'
+exec 'source ' . pluginssub . 'split.vim'
 
-" lua require("bnor")

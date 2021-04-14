@@ -9,10 +9,13 @@ require'nvim-treesitter.configs'.setup {
       node_decremental = "grm",
     },
   },
+  highlight = { enable = true }, 
+  indent = { enable = true },
 }
 
-require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 EOF
+
+" require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
