@@ -17,6 +17,8 @@ Plug 'google/vim-glaive'
 
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
+
+Plug 'lfv89/vim-interestingwords'
 call plug#end()
 
 let mapleader=" "
@@ -34,4 +36,3 @@ exec 'source ' . pluginssub . 'telescope.vim'
 exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'sets.vim'
 exec 'source ' . pluginssub . 'split.vim'
-
