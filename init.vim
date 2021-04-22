@@ -11,9 +11,7 @@ Plug 'nvim-lua/completion-nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
+Plug 'sbdchd/neoformat'
 
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
@@ -25,7 +23,7 @@ let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-exec 'source ' . pluginssub . 'codefmt.vim'
+" exec 'source ' . pluginssub . 'codefmt.vim'
 exec 'source ' . pluginssub . 'completion.vim'
 exec 'source ' . pluginssub . 'gruvbox.vim'
 exec 'source ' . pluginssub . 'keys.vim'
