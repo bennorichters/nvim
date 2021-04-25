@@ -23,7 +23,6 @@ let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-" exec 'source ' . pluginssub . 'codefmt.vim'
 exec 'source ' . pluginssub . 'completion.vim'
 exec 'source ' . pluginssub . 'gruvbox.vim'
 exec 'source ' . pluginssub . 'keys.vim'
