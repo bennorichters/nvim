@@ -6,8 +6,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-
-Plug 'nvim-lua/completion-nvim'
+Plug 'hrsh7th/nvim-compe'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -17,13 +16,14 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
 
 Plug 'lfv89/vim-interestingwords'
+
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-exec 'source ' . pluginssub . 'completion.vim'
 exec 'source ' . pluginssub . 'gruvbox.vim'
 exec 'source ' . pluginssub . 'keys.vim'
 exec 'source ' . pluginssub . 'lsp.vim'
