@@ -7,6 +7,9 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-compe'
+" Plug 'glepnir/lspsaga.nvim'
+Plug 'simrat39/symbols-outline.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils' 
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -18,6 +21,8 @@ Plug 'tpope/vim-commentary'
 Plug 'lfv89/vim-interestingwords'
 
 Plug 'kyazdani42/nvim-web-devicons'
+
+Plug 'ruanyl/coverage.vim'
 call plug#end()
 
 let mapleader=" "

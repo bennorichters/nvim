@@ -1,9 +1,22 @@
-" Typescript specific
 lua require'lspconfig'.jsonls.setup{}
 lua require'lspconfig'.html.setup{}
-lua require'lspconfig'.tsserver.setup{}
 lua require'lspconfig'.vuels.setup{}
 
+" Typescript
+lua <<EOF
+local nvim_lsp = require("lspconfig")
+
+nvim_lsp.tsserver.setup {
+    on_attach = function(client, bufnr)
+        local ts_utils = require("nvim-lsp-ts-utils")
+
+        ts_utils.setup{} 
+
+        -- required to enable ESLint code actions and formatting
+        ts_utils.setup_client(client)
+    end
+}
+EOF
 inoremap <F5> <ESC>:w<CR>:! ts-node --transpile-only %<CR>
 nnoremap <F5> :w<CR>:! ts-node --transpile-only %<CR>
 
@@ -58,3 +71,24 @@ inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 " inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 " inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 " inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+
+
+"" outline
+
+let g:symbols_outline = {
+    \ "highlight_hovered_item": v:true,
+    \ "show_guides": v:true,
+    \ "position": 'right',
+    \ "auto_preview": v:false,
+    \ "keymaps": {
+        \ "close": "<Esc>",
+        \ "goto_location": "<Cr>",
+        \ "focus_location": "o",
+        \ "hover_symbol": "<C-space>",
+        \ "rename_symbol": "r",
+        \ "code_actions": "a",
+    \ },
+    \ "lsp_blacklist": [],
+\ }
+
+nnoremap <leader>o <cmd>SymbolsOutline<CR>
