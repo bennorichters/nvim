@@ -38,17 +38,13 @@ let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-exec 'source ' . pluginssub . 'dart.vim'
 exec 'source ' . pluginssub . 'gruvbox.vim'
 exec 'source ' . pluginssub . 'keys.vim'
 exec 'source ' . pluginssub . 'lsp.vim'
 exec 'source ' . pluginssub . 'movelines.vim'
 exec 'source ' . pluginssub . 'neoformat.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
-exec 'source ' . pluginssub . 'python.vim'
 exec 'source ' . pluginssub . 'telescope.vim'
-exec 'source ' . pluginssub . 'text.vim'
 exec 'source ' . pluginssub . 'treesitter.vim'
-" exec 'source ' . pluginssub . 'typescript.vim'
 exec 'source ' . pluginssub . 'sets.vim'
 exec 'source ' . pluginssub . 'split.vim'
