@@ -1,6 +1,8 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'gruvbox-community/gruvbox'
 
+Plug 'vim-airline/vim-airline'
+
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -18,7 +20,7 @@ Plug 'saadparwaiz1/cmp_luasnip'
 
 " Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'jose-elias-alvarez/nvim-lsp-ts-utils' 
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
