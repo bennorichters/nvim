@@ -1,7 +1,7 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'gruvbox-community/gruvbox'
 
-Plug 'vim-airline/vim-airline'
+Plug 'phaazon/hop.nvim'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -41,13 +41,16 @@ let mapleader=" "
 let pluginssub = stdpath('config') . '/plugins/'
 
 exec 'source ' . pluginssub . 'gruvbox.vim'
+exec 'source ' . pluginssub . 'hop.vim'
 exec 'source ' . pluginssub . 'keys.vim'
 exec 'source ' . pluginssub . 'lsp.vim'
 exec 'source ' . pluginssub . 'movelines.vim'
 exec 'source ' . pluginssub . 'neoformat.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
 exec 'source ' . pluginssub . 'outline.vim'
+exec 'source ' . pluginssub . 'statusline.vim'
 exec 'source ' . pluginssub . 'telescope.vim'
 exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'sets.vim'
 exec 'source ' . pluginssub . 'split.vim'
+

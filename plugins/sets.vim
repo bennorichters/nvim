@@ -14,3 +14,5 @@ set signcolumn=yes
 set colorcolumn=80
 
 set hidden
+
+set cursorline
