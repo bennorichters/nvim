@@ -24,8 +24,6 @@ Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'sbdchd/neoformat'
-
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
 
@@ -45,7 +43,6 @@ exec 'source ' . pluginssub . 'hop.vim'
 exec 'source ' . pluginssub . 'keys.vim'
 exec 'source ' . pluginssub . 'lsp.vim'
 exec 'source ' . pluginssub . 'movelines.vim'
-exec 'source ' . pluginssub . 'neoformat.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
 exec 'source ' . pluginssub . 'outline.vim'
 exec 'source ' . pluginssub . 'statusline.vim'
