@@ -20,9 +20,11 @@ Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 
 Plug 'simrat39/symbols-outline.nvim'
+
 Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-commentary'
@@ -32,6 +34,8 @@ Plug 'lfv89/vim-interestingwords'
 Plug 'kyazdani42/nvim-web-devicons'
 
 Plug 'ruanyl/coverage.vim'
+
+Plug 'davidgranstrom/nvim-markdown-preview'
 call plug#end()
 
 let mapleader=" "
