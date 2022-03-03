@@ -47,7 +47,7 @@ for _, lsp in pairs(servers) do
 end
 
 require('lspconfig').zeta_note.setup {
-  cmd = {'C:/tools/zeta-note/zeta-note.exe'}
+  cmd = {'zeta-note'}
 }
 
 
