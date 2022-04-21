@@ -1,6 +1,6 @@
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -33,7 +33,7 @@ end
 
 
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
   snippet = {
@@ -72,18 +72,30 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'dartls', 'pylsp', 'rust_analyzer', 'tsserver' }
+local servers = { 'dartls', 'pylsp', 'rust_analyzer', 'sumneko_lua', 'tsserver' }
+local default_setup = {
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+  local setup_table = default_setup
+  if lsp == 'sumneko_lua' then
+    setup_table['settings'] = {
+      Lua = {
+        diagnostics = {
+          globals = { "vim" },
+        },
+      },
+    }
+  end
+  require('lspconfig')[lsp].setup(setup_table)
 end
 
-require'lspconfig'.zeta_note.setup{
-  cmd = {'zeta-note'}
+require 'lspconfig'.zeta_note.setup {
+  cmd = { 'zeta-note' }
 }
 
 -- illuminate
-vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', {noremap=true})
-vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', {noremap=true})
+vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-p>', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<cr>', { noremap = true })
