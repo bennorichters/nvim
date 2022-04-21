@@ -42,10 +42,10 @@ let mapleader=" "
 
 let pluginssub = stdpath('config') . '/plugins/'
 
-exec 'source ' . pluginssub . 'gruvbox.vim'
+lua require('gruvbox')
 exec 'source ' . pluginssub . 'hop.vim'
 exec 'source ' . pluginssub . 'keys.vim'
-exec 'source ' . pluginssub . 'lsp.vim'
+lua require('lsp')
 exec 'source ' . pluginssub . 'movelines.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
 exec 'source ' . pluginssub . 'outline.vim'
