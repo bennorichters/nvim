@@ -46,7 +46,7 @@ lua require('config.gruvbox')
 lua require('config.hop')
 lua require('config.keys')
 lua require('config.lsp')
-exec 'source ' . pluginssub . 'movelines.vim'
+lua require('config.movelines')
 exec 'source ' . pluginssub . 'netrw.vim'
 exec 'source ' . pluginssub . 'outline.vim'
 exec 'source ' . pluginssub . 'statusline.vim'
