@@ -44,7 +44,8 @@ let pluginssub = stdpath('config') . '/plugins/'
 
 lua require('plugins.gruvbox')
 lua require('plugins.hop')
-exec 'source ' . pluginssub . 'keys.vim'
+" exec 'source ' . pluginssub . 'keys.vim'
+lua require('plugins.keys')
 lua require('plugins.lsp')
 exec 'source ' . pluginssub . 'movelines.vim'
 exec 'source ' . pluginssub . 'netrw.vim'
