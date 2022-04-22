@@ -47,7 +47,7 @@ lua require('config.hop')
 lua require('config.keys')
 lua require('config.lsp')
 lua require('config.movelines')
-exec 'source ' . pluginssub . 'netrw.vim'
+lua require('config.netrw')
 exec 'source ' . pluginssub . 'outline.vim'
 exec 'source ' . pluginssub . 'statusline.vim'
 exec 'source ' . pluginssub . 'telescope.vim'
