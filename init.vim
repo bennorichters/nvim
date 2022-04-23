@@ -50,7 +50,7 @@ lua require('config.movelines')
 lua require('config.netrw')
 lua require('config.outline')
 lua require('config.statusline')
-exec 'source ' . pluginssub . 'telescope.vim'
+lua require('config.telescope')
 exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'sets.vim'
 exec 'source ' . pluginssub . 'split.vim'
