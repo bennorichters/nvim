@@ -49,8 +49,7 @@ lua require('config.lsp')
 lua require('config.movelines')
 lua require('config.netrw')
 lua require('config.outline')
-" exec 'source ' . pluginssub . 'outline.vim'
-exec 'source ' . pluginssub . 'statusline.vim'
+lua require('config.statusline')
 exec 'source ' . pluginssub . 'telescope.vim'
 exec 'source ' . pluginssub . 'treesitter.vim'
 exec 'source ' . pluginssub . 'sets.vim'
