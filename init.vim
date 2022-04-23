@@ -51,6 +51,6 @@ lua require('config.netrw')
 lua require('config.outline')
 lua require('config.statusline')
 lua require('config.telescope')
-exec 'source ' . pluginssub . 'treesitter.vim'
+lua require('config.treesitter')
 exec 'source ' . pluginssub . 'sets.vim'
 exec 'source ' . pluginssub . 'split.vim'
