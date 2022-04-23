@@ -17,4 +17,7 @@ set.hidden = true
 
 set.cursorline = true
 
+set.splitbelow = true
+set.splitright = true
+
 vim.wo.wrap = false

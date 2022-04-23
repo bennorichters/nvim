@@ -53,4 +53,3 @@ lua require('config.statusline')
 lua require('config.telescope')
 lua require('config.treesitter')
 lua require('config.sets')
-exec 'source ' . pluginssub . 'split.vim'
