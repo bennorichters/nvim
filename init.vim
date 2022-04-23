@@ -52,5 +52,5 @@ lua require('config.outline')
 lua require('config.statusline')
 lua require('config.telescope')
 lua require('config.treesitter')
-exec 'source ' . pluginssub . 'sets.vim'
+lua require('config.sets')
 exec 'source ' . pluginssub . 'split.vim'
