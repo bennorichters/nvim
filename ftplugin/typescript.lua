@@ -1,9 +1,7 @@
-lua require'lspconfig'.jsonls.setup{}
-lua require'lspconfig'.html.setup{}
-lua require'lspconfig'.vuels.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.vuels.setup{}
 
-" Typescript
-lua <<EOF
 local nvim_lsp = require("lspconfig")
 
 nvim_lsp.tsserver.setup {
@@ -16,7 +14,6 @@ nvim_lsp.tsserver.setup {
         ts_utils.setup_client(client)
     end
 }
-EOF
-inoremap <F5> <ESC>:w<CR>:! ts-node --transpile-only %<CR>
-nnoremap <F5> :w<CR>:! ts-node --transpile-only %<CR>
 
+vim.keymap.set('i', '<F5>', '<ESC>:w<CR>:! ts-node --transpile-only %<CR>')
+vim.keymap.set('n', '<F5>', ':w<CR>:! ts-node --transpile-only %<CR>')
