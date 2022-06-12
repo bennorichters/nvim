@@ -92,9 +92,7 @@ for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup(setup_table)
 end
 
-require 'lspconfig'.zeta_note.setup {
-  cmd = { 'zeta-note' }
-}
+require'lspconfig'.marksman.setup{}
 
 -- illuminate
 vim.api.nvim_set_keymap('n', '<C-n>', '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', { noremap = true })
