@@ -1,7 +1,7 @@
 require 'paq' {
   'savq/paq-nvim';
 
-  'gruvbox-community/gruvbox';
+  'sainnhe/gruvbox-material';
 
   'phaazon/hop.nvim';
 
