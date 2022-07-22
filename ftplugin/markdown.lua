@@ -1,6 +1,8 @@
 require('cmp').setup.buffer { enabled = false }
 
-vim.opt.textwidth = 80
+-- vim.opt.textwidth = 80
+vim.wo.wrap = true
+vim.wo.linebreak = true
 
 vim.keymap.set('i', '<F5>', '<ESC>:w<CR>:MarkdownPreview<CR>')
 vim.keymap.set('n', '<F5>', ':w<CR>:MarkdownPreview<CR>')
