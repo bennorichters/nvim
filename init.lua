@@ -19,9 +19,6 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
 
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-
   use 'simrat39/symbols-outline.nvim'
 
   use 'jose-elias-alvarez/nvim-lsp-ts-utils'
