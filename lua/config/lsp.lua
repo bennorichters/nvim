@@ -72,7 +72,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'dartls', 'pylsp', 'rust_analyzer', 'sumneko_lua', 'tsserver' }
+local servers = { 'dartls', 'html', 'pylsp', 'rust_analyzer', 'sumneko_lua', 'tsserver' }
 local default_setup = {
   on_attach = on_attach,
   capabilities = capabilities,

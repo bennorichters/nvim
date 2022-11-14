@@ -24,8 +24,6 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
-
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -43,6 +41,8 @@ require('packer').startup(function(use)
   use 'ruanyl/coverage.vim'
 
   use 'davidgranstrom/nvim-markdown-preview'
+
+  use 'ThePrimeagen/vim-be-good'
 end)
 
 vim.g.mapleader = ' '
@@ -58,3 +58,5 @@ require('config.statusline')
 require('config.telescope')
 require('config.treesitter')
 require('config.sets')
+
+require("symbols-outline").setup()
