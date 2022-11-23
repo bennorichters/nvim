@@ -2,7 +2,7 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use 'sainnhe/gruvbox-material'
+  use 'Mofiqul/dracula.nvim'
 
   use 'phaazon/hop.nvim'
 
@@ -47,7 +47,7 @@ end)
 
 vim.g.mapleader = ' '
 
-require('config.gruvbox')
+require('config.colorscheme')
 require('config.hop')
 require('config.keys')
 require('config.lsp')
