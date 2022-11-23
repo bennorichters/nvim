@@ -17,6 +17,8 @@ set.hidden = true
 
 set.cursorline = true
 
+set.termguicolors = true
+
 set.splitbelow = true
 set.splitright = true
 
