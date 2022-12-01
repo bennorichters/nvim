@@ -50,6 +50,7 @@ vim.g.mapleader = ' '
 require('config.colorscheme')
 require('config.hop')
 require('config.keys')
+require('config.luasnip')
 require('config.lsp')
 require('config.movelines')
 require('config.netrw')
