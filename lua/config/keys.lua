@@ -11,3 +11,5 @@ vim.keymap.set('i', '<c-s>', '<c-o>:update<CR>')
 
 vim.keymap.set('n', '<leader>y', '"*y')
 vim.keymap.set('v', '<leader>y', '"*y')
+
+vim.keymap.set('n', '<leader>m', ':lua vim.lsp.buf.format()<CR>')
