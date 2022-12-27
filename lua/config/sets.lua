@@ -23,3 +23,7 @@ set.splitbelow = true
 set.splitright = true
 
 vim.wo.wrap = false
+
+set.hlsearch = false
+set.ignorecase = true
+set.smartcase = true
