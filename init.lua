@@ -34,8 +34,6 @@ require('packer').startup(function(use)
     }
   }
 
-  use 'kdarkhan/rust-tools.nvim'
-
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
