@@ -5,7 +5,6 @@ lsp.configure('rust_analyzer', {
   settings = {
     ["rust-analyzer"] = {
       checkOnSave = {
-        allFeatures = true,
         command = "clippy",
       }
     }
