@@ -51,8 +51,6 @@ require('packer').startup(function(use)
   use 'ruanyl/coverage.vim'
 
   use 'davidgranstrom/nvim-markdown-preview'
-
-  use 'ThePrimeagen/vim-be-good'
 end)
 
 vim.g.mapleader = ' '
