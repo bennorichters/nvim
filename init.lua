@@ -1,3 +1,5 @@
+vim.g.mapleader = ' '
+
 require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -52,20 +54,3 @@ require('packer').startup(function(use)
 
   use 'davidgranstrom/nvim-markdown-preview'
 end)
-
-vim.g.mapleader = ' '
-
-require('config.colorscheme')
-require('config.hop')
-require('config.keys')
-require('config.luasnip')
-require('config.lsp')
-require('config.movelines')
-require('config.netrw')
-require('config.outline')
-require('config.statusline')
-require('config.telescope')
-require('config.treesitter')
-require('config.sets')
-
-require("symbols-outline").setup()

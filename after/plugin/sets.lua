@@ -1,3 +1,5 @@
+vim.wo.wrap = false
+
 local set = vim.opt
 
 set.tabstop = 2
@@ -21,8 +23,6 @@ set.termguicolors = true
 
 set.splitbelow = true
 set.splitright = true
-
-vim.wo.wrap = false
 
 set.hlsearch = false
 set.ignorecase = true
