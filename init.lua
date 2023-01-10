@@ -41,16 +41,11 @@ require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
-  use 'nvim-treesitter/playground'
-
-  use 'tpope/vim-obsession'
   use 'tpope/vim-commentary'
 
   use 'lfv89/vim-interestingwords'
 
   use 'kyazdani42/nvim-web-devicons'
-
-  use 'ruanyl/coverage.vim'
 
   use 'davidgranstrom/nvim-markdown-preview'
 end)
