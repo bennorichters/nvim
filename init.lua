@@ -4,7 +4,7 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use 'savq/melange'
+  use 'rebelot/kanagawa.nvim'
 
   use 'phaazon/hop.nvim'
 
@@ -41,6 +41,8 @@ require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
+  use 'RRethy/vim-illuminate'
+
   use 'tpope/vim-commentary'
 
   use 'lfv89/vim-interestingwords'
@@ -48,4 +50,6 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
 
   use 'davidgranstrom/nvim-markdown-preview'
+
+  use '/Users/bennorichters/code/taal.nvim'
 end)
