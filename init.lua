@@ -1,55 +1,69 @@
 vim.g.mapleader = ' '
 
-require('packer').startup(function(use)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  "wbthomason/packer.nvim",
 
-  use 'rebelot/kanagawa.nvim'
+  "rebelot/kanagawa.nvim",
 
-  use 'phaazon/hop.nvim'
+  "phaazon/hop.nvim",
 
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  "nvim-lua/popup.nvim",
+  "nvim-lua/plenary.nvim",
+  "nvim-telescope/telescope.nvim",
 
-  use 'simrat39/symbols-outline.nvim'
+  "simrat39/symbols-outline.nvim",
 
-  use {
+  {
     'VonHeikemen/lsp-zero.nvim',
-    requires = {
+    branch = 'v1.x',
+    dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },
-      { 'williamboman/mason.nvim' },
-      { 'williamboman/mason-lspconfig.nvim' },
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { 'williamboman/mason.nvim' }, -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-buffer' },
-      { 'hrsh7th/cmp-path' },
-      { 'saadparwaiz1/cmp_luasnip' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'hrsh7th/cmp-nvim-lua' },
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'hrsh7th/cmp-buffer' }, -- Optional
+      { 'hrsh7th/cmp-path' }, -- Optional
+      { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+      { 'hrsh7th/cmp-nvim-lua' }, -- Optional
 
       -- Snippets
-      { 'L3MON4D3/LuaSnip' },
-      { 'rafamadriz/friendly-snippets' },
+      { 'L3MON4D3/LuaSnip' }, -- Required
+      { 'rafamadriz/friendly-snippets' }, -- Optional
     }
-  }
+  },
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
 
-  use 'RRethy/vim-illuminate'
+  "RRethy/vim-illuminate",
 
-  use 'tpope/vim-commentary'
+  "tpope/vim-commentary",
 
-  use 'lfv89/vim-interestingwords'
+  "lfv89/vim-interestingwords",
 
-  use 'kyazdani42/nvim-web-devicons'
+  "kyazdani42/nvim-web-devicons",
 
-  use 'davidgranstrom/nvim-markdown-preview'
+  "davidgranstrom/nvim-markdown-preview",
 
-  use '/Users/bennorichters/code/taal.nvim'
-end)
+  -- "/Users/bennorichters/code/taal.nvim",
+})
