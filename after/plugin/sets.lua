@@ -27,3 +27,6 @@ set.splitright = true
 set.hlsearch = false
 set.ignorecase = true
 set.smartcase = true
+
+-- updatetime also effects highlighting (see docs for local-highlight)
+set.updatetime = 500

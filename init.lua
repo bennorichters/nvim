@@ -55,7 +55,13 @@ require("lazy").setup({
     build = ":TSUpdate",
   },
 
-  "RRethy/vim-illuminate",
+  {
+    "tzachar/local-highlight.nvim",
+    config = function()
+      require("local-highlight").setup({
+      })
+    end,
+  },
 
   "tpope/vim-commentary",
 
@@ -67,3 +73,4 @@ require("lazy").setup({
 
   -- "/Users/bennorichters/code/taal.nvim",
 })
+
