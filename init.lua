@@ -14,9 +14,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- Packer can manage itself
-  "wbthomason/packer.nvim",
-
   "rebelot/kanagawa.nvim",
 
   "phaazon/hop.nvim",
@@ -58,8 +55,7 @@ require("lazy").setup({
   {
     "tzachar/local-highlight.nvim",
     config = function()
-      require("local-highlight").setup({
-      })
+      require("local-highlight").setup({})
     end,
   },
 
