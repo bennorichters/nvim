@@ -67,6 +67,14 @@ require("lazy").setup({
 
   "davidgranstrom/nvim-markdown-preview",
 
+  {
+    "dpayne/CodeGPT.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+    }
+  }
+
   -- "/Users/bennorichters/code/taal.nvim",
 })
 
