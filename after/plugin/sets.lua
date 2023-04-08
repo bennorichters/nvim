@@ -30,3 +30,5 @@ set.smartcase = true
 
 -- updatetime also effects highlighting (see docs for local-highlight)
 set.updatetime = 500
+
+set.exrc = true

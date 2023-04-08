@@ -38,7 +38,7 @@ require("lazy").setup({
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
-      { 'williamboman/mason-lspconfig.nvim' },      -- Optional
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
       { 'hrsh7th/nvim-cmp' },         -- Required
