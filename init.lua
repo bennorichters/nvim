@@ -69,7 +69,7 @@ require("lazy").setup({
 
   "lfv89/vim-interestingwords",
 
-  "kyazdani42/nvim-web-devicons",
+  "nvim-tree/nvim-web-devicons",
 
   "davidgranstrom/nvim-markdown-preview",
 
@@ -82,11 +82,10 @@ require("lazy").setup({
   },
 
   {
-    "stevearc/oil.nvim",
-    config = function()
-      require("oil").setup()
-    end,
-  },
-
+    'stevearc/oil.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  }
   -- "/Users/bennorichters/code/taal.nvim",
 })
