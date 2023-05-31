@@ -86,6 +86,7 @@ require("lazy").setup({
     opts = {},
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
-  }
+  },
+
   -- "/Users/bennorichters/code/taal.nvim",
 })
