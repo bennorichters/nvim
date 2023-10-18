@@ -13,3 +13,5 @@ vim.keymap.set('n', '<leader>y', '"*y')
 vim.keymap.set('v', '<leader>y', '"*y')
 
 vim.keymap.set('n', '<leader>m', ':lua vim.lsp.buf.format()<CR>')
+
+vim.keymap.set('n', '<CR>', 'ciw')
