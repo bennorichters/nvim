@@ -91,5 +91,12 @@ require("lazy").setup({
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
 
+  {
+    "mickael-menu/zk-nvim",
+    config = function()
+      require("zk").setup()
+    end
+  },
+
   -- "/Users/bennorichters/code/taal.nvim",
 })
