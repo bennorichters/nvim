@@ -74,17 +74,6 @@ require("lazy").setup({
   "davidgranstrom/nvim-markdown-preview",
 
   {
-    "dpayne/CodeGPT.nvim",
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      require("codegpt.config")
-    end
-  },
-
-  {
     'stevearc/oil.nvim',
     opts = {},
     -- Optional dependencies
@@ -95,6 +84,16 @@ require("lazy").setup({
     "mickael-menu/zk-nvim",
     config = function()
       require("zk").setup()
+    end
+  },
+
+  {
+    "rest-nvim/rest.nvim",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("rest-nvim").setup({
+        --- Get the same options from Packer setup
+      })
     end
   },
 

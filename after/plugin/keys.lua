@@ -15,3 +15,6 @@ vim.keymap.set('v', '<leader>y', '"*y')
 vim.keymap.set('n', '<leader>m', ':lua vim.lsp.buf.format()<CR>')
 
 vim.keymap.set('n', '<CR>', 'ciw')
+
+vim.keymap.set('n', '<leader>r', '<Plug>RestNvim')
+vim.keymap.set('n', '<leader>t', '<Plug>RestNvimPreview')
