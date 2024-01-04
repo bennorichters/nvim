@@ -74,10 +74,12 @@ require("lazy").setup({
   "davidgranstrom/nvim-markdown-preview",
 
   {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'echasnovski/mini.files',
+    version = '*',
+    config = function()
+      require('mini.files').setup()
+    end,
+
   },
 
   {
