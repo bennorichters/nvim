@@ -3,16 +3,15 @@ local Popup = require("nui.popup")
 
 local M = {}
 
-local system_content =
-    "Assistant is a language expert designed to help users with grammar and spelling. " ..
-    "Improve every text the user sends."
-
-local request_body = [[
+local request_body_grammar = [[
 {
   "messages": [
     {
       "role": "system",
-      "content": "]] .. system_content .. [["
+      "content": "]] ..
+    "Assistant is a language expert designed to help users with grammar and spelling. " ..
+    "Improve every text the user sends."
+    .. [["
     },
     {
       "role": "user",
@@ -67,7 +66,7 @@ local function open_popup(content)
   popup:mount()
 end
 
-M.ask_ai = function()
+M.ai_improve_grammar = function()
   local current_line = vim.fn.line('.')
   local line_content = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
 
@@ -77,7 +76,7 @@ M.ask_ai = function()
     "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
     "api-version=2023-05-15",
     {
-      body = string.format(request_body, line_content),
+      body = string.format(request_body_grammar, line_content),
       headers = {
         content_type = "application/json",
         api_key = key,
