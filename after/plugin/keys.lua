@@ -18,3 +18,5 @@ vim.keymap.set('n', '<CR>', 'ciw')
 
 vim.keymap.set('n', '<leader>r', '<Plug>RestNvim')
 vim.keymap.set('n', '<leader>t', '<Plug>RestNvimPreview')
+
+vim.keymap.set('n', '<leader>g', ":lua require('bnor').ask_ai()<CR>")

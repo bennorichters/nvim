@@ -99,5 +99,6 @@ require("lazy").setup({
     end
   },
 
+  { "MunifTanjim/nui.nvim" },
   -- "/Users/bennorichters/code/taal.nvim",
 })

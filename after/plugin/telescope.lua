@@ -4,7 +4,6 @@ vim.keymap.set('n', '<Leader>fb', ':Telescope buffers<cr>')
 vim.keymap.set('n', '<Leader>fh', ':Telescope help_tags<cr>')
 vim.keymap.set('n', '<Leader>fk', ':lua require("telescope.builtin").keymaps()<cr>')
 
--- vim.keymap.set('n', '<Leader>fd', ':lua require("bnor").search_dotfiles()<cr>')
 vim.keymap.set('n', '<leader>fd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 vim.keymap.set('n', '<leader>/', function()
