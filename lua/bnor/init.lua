@@ -60,8 +60,26 @@ local request_body_grammar = [[
       "role": "system",
       "content": "]] ..
     "Assistant is a language expert designed to help users with grammar and spelling. " ..
-    "Improve every text the user sends." ..
+    "Improve every text the user sends. " ..
+    "Respond in the language of the user. " ..
+    "Respond with just the improved text, nothing more." ..
     [["
+    },
+    {
+      "role": "user",
+      "content": "The moon is more bright then it was yesterdate."
+    },
+    {
+      "role": "assistant",
+      "content": "The moon is brighter than it was yeterday."
+    },
+    {
+      "role": "user",
+      "content": "Hun moeten onmidellijk doen wat ik zech."
+    },
+    {
+      "role": "assistant",
+      "content": "Ze moeten onmiddellijk doen wat ik zeg."
     },
     {
       "role": "user",
@@ -95,7 +113,6 @@ local function open_popup(content)
     },
   })
 
-  -- set content
   vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, { content })
 
   popup:map("n", "q", function()
@@ -116,7 +133,7 @@ local function open_popup(content)
   popup:mount()
 end
 
-M.ai_improve_grammar = function()
+local function send_current_line(request_body)
   local current_line = vim.fn.line('.')
   local line_content = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
 
@@ -126,7 +143,7 @@ M.ai_improve_grammar = function()
     "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
     "api-version=2023-05-15",
     {
-      body = string.format(request_body_grammar, line_content),
+      body = string.format(request_body, line_content),
       headers = {
         content_type = "application/json",
         api_key = key,
@@ -136,35 +153,23 @@ M.ai_improve_grammar = function()
   if (response.status == 200) then
     local response_body = vim.fn.json_decode(response.body)
     local content = response_body.choices[1].message.content
-    open_popup(content)
+    return content
   else
     print(vim.inspect(response))
   end
 end
 
+M.ai_improve_grammar = function()
+  local content = send_current_line(request_body_grammar)
+  if (content) then
+    open_popup(content)
+  end
+end
+
 M.ai_set_spellang = function()
-  local current_line = vim.fn.line('.')
-  local line_content = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
-
-  local key = os.getenv("OPENAI_API_KEY")
-  local response = curl.post(
-    "https://td-openai-dev.openai.azure.com/" ..
-    "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
-    "api-version=2023-05-15",
-    {
-      body = string.format(request_body_recognize_language, line_content),
-      headers = {
-        content_type = "application/json",
-        api_key = key,
-      },
-    })
-
-  if (response.status == 200) then
-    local response_body = vim.fn.json_decode(response.body)
-    local content = response_body.choices[1].message.content
+  local content = send_current_line(request_body_recognize_language)
+  if (content) then
     vim.cmd("set spelllang=" .. content)
-  else
-    print(vim.inspect(response))
   end
 end
 
