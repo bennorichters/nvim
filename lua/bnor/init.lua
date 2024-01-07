@@ -166,7 +166,7 @@ M.ai_improve_grammar = function()
   end
 end
 
-M.ai_set_spellang = function()
+M.ai_set_spelllang = function()
   local content = send_current_line(request_body_recognize_language)
   if (content) then
     vim.cmd("set spelllang=" .. content)

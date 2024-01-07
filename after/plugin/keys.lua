@@ -20,4 +20,4 @@ vim.keymap.set('n', '<leader>r', '<Plug>RestNvim')
 vim.keymap.set('n', '<leader>t', '<Plug>RestNvimPreview')
 
 vim.keymap.set('n', '<leader>g', ":lua require('bnor').ai_improve_grammar()<CR>")
-vim.keymap.set('n', '<leader>s', ":lua require('bnor').ai_set_spellang()<CR>")
+vim.keymap.set('n', '<leader>s', ":lua require('bnor').ai_set_spelllang()<CR>")
