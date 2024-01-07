@@ -32,3 +32,5 @@ set.smartcase = true
 set.updatetime = 500
 
 set.exrc = true
+
+set.spell = true
