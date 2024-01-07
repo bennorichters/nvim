@@ -1,8 +1,6 @@
 local curl = require("plenary.curl")
 local Popup = require("nui.popup")
 
-local M = {}
-
 local request_body_recognize_language = [[
 {
   "messages": [
@@ -158,6 +156,8 @@ local function send_current_line(request_body)
     print(vim.inspect(response))
   end
 end
+
+local M = {}
 
 M.ai_improve_grammar = function()
   local content = send_current_line(request_body_grammar)
