@@ -3,6 +3,7 @@ local Popup = require("nui.popup")
 
 local request_body_recognize_language = require("bnor.requests.recognize_language")
 local request_body_grammar = require("bnor.requests.grammar")
+local request_body_minutes = require("bnor.requests.minutes")
 
 local function open_popup(content)
   local popup = Popup({
@@ -48,17 +49,39 @@ local function open_popup(content)
   popup:mount()
 end
 
-local function send_current_line(request_body)
-  local current_line = vim.fn.line('.')
-  local line_content = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
+local function current_line()
+  local line_number = vim.fn.line('.')
+  return vim.api.nvim_buf_get_lines(0, line_number - 1, line_number, false)[1]
+end
 
+local function visual_selection()
+  local s_start = vim.fn.getpos("'<")
+  local s_end = vim.fn.getpos("'>")
+  local n_lines = math.abs(s_end[2] - s_start[2]) + 1
+  local lines = vim.api.nvim_buf_get_lines(0, s_start[2] - 1, s_end[2], false)
+  lines[1] = string.sub(lines[1], s_start[3], -1)
+  if n_lines == 1 then
+    lines[n_lines] = string.sub(lines[n_lines], 1, s_end[3] - s_start[3] + 1)
+  else
+    lines[n_lines] = string.sub(lines[n_lines], 1, s_end[3])
+  end
+  return table.concat(lines, '\n')
+end
+
+local function send_text(text, request_body)
   local key = os.getenv("OPENAI_API_KEY")
+
+  local encoded_text = vim.fn.json_encode(text)
+  encoded_text = string.sub(encoded_text, 2, string.len(encoded_text) - 1)
+  local body_content = string.format(vim.fn.json_encode(request_body), encoded_text)
+
+
   local response = curl.post(
     "https://td-openai-dev.openai.azure.com/" ..
     "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
     "api-version=2023-05-15",
     {
-      body = string.format(vim.fn.json_encode(request_body), line_content),
+      body = body_content,
       headers = {
         content_type = "application/json",
         api_key = key,
@@ -77,16 +100,23 @@ end
 local M = {}
 
 M.ai_improve_grammar = function()
-  local content = send_current_line(request_body_grammar)
+  local content = send_text(current_line(), request_body_grammar)
   if (content) then
     open_popup(content)
   end
 end
 
 M.ai_set_spelllang = function()
-  local content = send_current_line(request_body_recognize_language)
+  local content = send_text(current_line(), request_body_recognize_language)
   if (content) then
     vim.cmd("set spelllang=" .. content)
+  end
+end
+
+M.ai_write_minutes = function()
+  local content = send_text(visual_selection(), request_body_minutes)
+  if (content) then
+    open_popup(content)
   end
 end
 
