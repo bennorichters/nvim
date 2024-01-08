@@ -1,91 +1,8 @@
 local curl = require("plenary.curl")
 local Popup = require("nui.popup")
 
-local request_body_recognize_language = [[
-{
-  "messages": [
-    {
-      "role": "system",
-      "content": "]] ..
-    "You are a language expert designed to recognize the language of a given text. " ..
-    "Your response is the two letter ISO 639-1 code of the language the given text is written in." ..
-    [["
-    },
-    {
-      "role": "user",
-      "content": "vom wasser haben wir's gelernt"
-    },
-    {
-      "role": "assistant",
-      "content": "de"
-    },
-    {
-      "role": "user",
-      "content": "Perhaps one did not want to be loved so much as to be understood."
-    },
-    {
-      "role": "assistant",
-      "content": "en"
-    },
-    {
-      "role": "user",
-      "content": "Als je het lelijke niet kunt verbeteren, vernietigen of ontvluchten, is het maar het beste het te bezingen."
-    },
-    {
-      "role": "assistant",
-      "content": "nl"
-    },
-    {
-      "role": "user",
-      "content": "Tedd a kezed homlokomra, mintha kezed kezem volna."
-    },
-    {
-      "role": "assistant",
-      "content": "hu"
-    },
-    {
-      "role": "user",
-      "content": "%s"
-    }
-  ]
-}
-]]
-
-local request_body_grammar = [[
-{
-  "messages": [
-    {
-      "role": "system",
-      "content": "]] ..
-    "Assistant is a language expert designed to help users with grammar and spelling. " ..
-    "Improve every text the user sends. " ..
-    "Respond in the language of the user. " ..
-    "Respond with just the improved text, nothing more." ..
-    [["
-    },
-    {
-      "role": "user",
-      "content": "The moon is more bright then it was yesterdate."
-    },
-    {
-      "role": "assistant",
-      "content": "The moon is brighter than it was yeterday."
-    },
-    {
-      "role": "user",
-      "content": "Hun moeten onmidellijk doen wat ik zech."
-    },
-    {
-      "role": "assistant",
-      "content": "Ze moeten onmiddellijk doen wat ik zeg."
-    },
-    {
-      "role": "user",
-      "content": "%s"
-    }
-  ]
-}
-]]
+local request_body_recognize_language = require("bnor.requests.recognize_language")
+local request_body_grammar = require("bnor.requests.grammar")
 
 local function open_popup(content)
   local popup = Popup({
@@ -141,7 +58,7 @@ local function send_current_line(request_body)
     "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
     "api-version=2023-05-15",
     {
-      body = string.format(request_body, line_content),
+      body = string.format(vim.fn.json_encode(request_body), line_content),
       headers = {
         content_type = "application/json",
         api_key = key,
