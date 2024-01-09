@@ -5,6 +5,16 @@ local request_body_recognize_language = require("bnor.requests.recognize_languag
 local request_body_grammar = require("bnor.requests.grammar")
 local request_body_minutes = require("bnor.requests.minutes")
 
+local function split_lines(text)
+  text = text .. "\n"
+  local lines = {}
+  for str in string.gmatch(text, "(.-)\n") do
+    table.insert(lines, str)
+  end
+
+  return lines
+end
+
 local function open_popup(content)
   local popup = Popup({
     enter = true,
@@ -29,7 +39,8 @@ local function open_popup(content)
     },
   })
 
-  vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, { content })
+  local lines = split_lines(content)
+  vim.api.nvim_buf_set_lines(popup.bufnr, 0, 1, false, lines)
 
   popup:map("n", "q", function()
     popup:unmount()
@@ -37,13 +48,15 @@ local function open_popup(content)
 
   popup:map("n", "r", function()
     popup:unmount()
-    vim.api.nvim_set_current_line(content)
+    local line_number = vim.fn.line('.')
+    vim.api.nvim_buf_set_lines(0, line_number, line_number, false, lines)
+    vim.cmd 'normal dd'
   end, {})
 
   popup:map("n", "i", function()
     popup:unmount()
-    vim.cmd 'normal o'
-    vim.api.nvim_set_current_line(content)
+    local line_number = vim.fn.line('.')
+    vim.api.nvim_buf_set_lines(0, line_number, line_number, false, lines)
   end, {})
 
   popup:mount()
