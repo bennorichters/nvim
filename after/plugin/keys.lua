@@ -22,3 +22,5 @@ vim.keymap.set('n', '<leader>t', '<Plug>RestNvimPreview')
 vim.keymap.set('n', '<leader>g', ":lua require('bnor').ai_improve_grammar()<CR>")
 vim.keymap.set('n', '<leader>s', ":lua require('bnor').ai_set_spelllang()<CR>")
 vim.keymap.set('v', '<leader>a', ":lua require('bnor').ai_write_minutes()<CR>")
+
+vim.keymap.set('n', '-', "o- ")
