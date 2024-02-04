@@ -6,4 +6,5 @@ vim.keymap.set('n', '<F6>', ':w<CR>:sp<CR>:term python3 -m unittest<CR>')
 
 vim.keymap.set('n', '<F9>', ':bd!<CR>')
 
+-- pyright does not support formatting
 vim.keymap.set('n', '<leader>m', ':silent !black %<CR>')
