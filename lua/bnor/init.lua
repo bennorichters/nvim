@@ -91,7 +91,7 @@ local function send_text(text, request_body)
 
   local response = curl.post(
     "https://td-openai-dev.openai.azure.com/" ..
-    "openai/deployments/td-openai-dev-gpt4/chat/completions?" ..
+    "openai/deployments/td-openai-dev-gtp4-32k/chat/completions?" ..
     "api-version=2023-05-15",
     {
       body = body_content,
