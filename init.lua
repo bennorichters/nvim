@@ -90,15 +90,19 @@ require("lazy").setup({
   },
 
   {
-    "rest-nvim/rest.nvim",
-    dependencies = { { "nvim-lua/plenary.nvim" } },
+    "vhyrro/luarocks.nvim",
     config = function()
-      require("rest-nvim").setup({
-        --- Get the same options from Packer setup
-      })
-    end
+      require("luarocks").setup({})
+    end,
+  },
+  {
+    "rest-nvim/rest.nvim",
+    ft = "http",
+    dependencies = { "luarocks.nvim" },
+    config = function()
+      require("rest-nvim").setup()
+    end,
   },
 
   { "MunifTanjim/nui.nvim" },
-  -- "/Users/bennorichters/code/taal.nvim",
 })
