@@ -34,3 +34,5 @@ set.updatetime = 500
 set.exrc = true
 
 set.spell = true
+
+set.foldenable = false
