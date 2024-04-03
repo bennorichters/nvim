@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<Leader>o', ':SymbolsOutline<CR>')
+vim.keymap.set("n", "<Leader>o", ":SymbolsOutline<CR>")

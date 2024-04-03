@@ -12,7 +12,7 @@ set.relativenumber = true
 set.nu = true
 
 set.scrolloff = 8
-set.signcolumn = 'yes'
+set.signcolumn = "yes"
 set.colorcolumn = "100"
 
 set.hidden = true

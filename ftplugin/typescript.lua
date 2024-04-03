@@ -1,6 +1,6 @@
-require'lspconfig'.jsonls.setup{}
-require'lspconfig'.html.setup{}
-require'lspconfig'.vuels.setup{}
+require"lspconfig".jsonls.setup{}
+require"lspconfig".html.setup{}
+require"lspconfig".vuels.setup{}
 
 local nvim_lsp = require("lspconfig")
 
@@ -15,5 +15,5 @@ nvim_lsp.tsserver.setup {
     end
 }
 
-vim.keymap.set('i', '<F5>', '<ESC>:w<CR>:! ts-node --transpile-only %<CR>')
-vim.keymap.set('n', '<F5>', ':w<CR>:! ts-node --transpile-only %<CR>')
+vim.keymap.set("i", "<F5>", "<ESC>:w<CR>:! ts-node --transpile-only %<CR>")
+vim.keymap.set("n", "<F5>", ":w<CR>:! ts-node --transpile-only %<CR>")
