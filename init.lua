@@ -15,15 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "rebelot/kanagawa.nvim",
-
   "phaazon/hop.nvim",
-
   "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
-
   "simrat39/symbols-outline.nvim",
-
   {
     'williamboman/mason.nvim',
     config = function()
@@ -31,7 +27,6 @@ require("lazy").setup({
     end,
   },
   { 'williamboman/mason-lspconfig.nvim' },
-
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x'
@@ -41,43 +36,33 @@ require("lazy").setup({
   { 'hrsh7th/nvim-cmp' },
   { 'L3MON4D3/LuaSnip' },
   { 'rafamadriz/friendly-snippets' },
-
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-
   {
     "tzachar/local-highlight.nvim",
     config = function()
       require("local-highlight").setup({})
     end,
   },
-
   "tpope/vim-commentary",
-
   "lfv89/vim-interestingwords",
-
   "nvim-tree/nvim-web-devicons",
-
   "davidgranstrom/nvim-markdown-preview",
-
   {
     'echasnovski/mini.files',
     version = '*',
     config = function()
       require('mini.files').setup()
     end,
-
   },
-
   {
     "mickael-menu/zk-nvim",
     config = function()
       require("zk").setup()
     end
   },
-
   {
     "vhyrro/luarocks.nvim",
     priority = 1000,
@@ -91,6 +76,5 @@ require("lazy").setup({
       require("rest-nvim").setup()
     end,
   },
-
   { "MunifTanjim/nui.nvim" },
 })
