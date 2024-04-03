@@ -21,21 +21,21 @@ require("lazy").setup({
   "nvim-telescope/telescope.nvim",
   "simrat39/symbols-outline.nvim",
   {
-    'williamboman/mason.nvim',
+    "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
     end,
   },
-  { 'williamboman/mason-lspconfig.nvim' },
+  { "williamboman/mason-lspconfig.nvim" },
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x'
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v3.x"
   },
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'L3MON4D3/LuaSnip' },
-  { 'rafamadriz/friendly-snippets' },
+  { "neovim/nvim-lspconfig" },
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "hrsh7th/nvim-cmp" },
+  { "L3MON4D3/LuaSnip" },
+  { "rafamadriz/friendly-snippets" },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -51,10 +51,10 @@ require("lazy").setup({
   "nvim-tree/nvim-web-devicons",
   "davidgranstrom/nvim-markdown-preview",
   {
-    'echasnovski/mini.files',
-    version = '*',
+    "echasnovski/mini.files",
+    version = "*",
     config = function()
-      require('mini.files').setup()
+      require("mini.files").setup()
     end,
   },
   {
