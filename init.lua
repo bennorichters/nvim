@@ -57,10 +57,13 @@ require("lazy").setup({
       require("mini.files").setup()
     end,
   },
+
   {
-    "mickael-menu/zk-nvim",
+    "zk-org/zk-nvim",
     config = function()
-      require("zk").setup()
+      require("zk").setup({
+        picker = "telescope",
+      })
     end
   },
   {

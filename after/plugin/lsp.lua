@@ -5,7 +5,7 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 local cmp = require("cmp")
-local cmp_action = require("lsp-zero").cmp_action()
+require("lsp-zero").cmp_action()
 
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
@@ -31,6 +31,8 @@ lsp.configure("lua_ls", {
     }
   }
 })
+
+lsp.configure("pyright")
 
 lsp.configure("rust_analyzer", {
   settings = {
