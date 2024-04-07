@@ -1,7 +1,7 @@
 vim.cmd("colorscheme kanagawa")
 
-function change_color_theme()
-  current = require("kanagawa")._CURRENT_THEME
+local function change_color_theme()
+  local current = require("kanagawa")._CURRENT_THEME
   if (current == "wave") then
     vim.cmd("colorscheme kanagawa-dragon")
   elseif (current == "dragon") then
@@ -11,5 +11,4 @@ function change_color_theme()
   end
 end
 
-vim.keymap.set("n", "<leader>c", ":lua change_color_theme()<CR>")
-
+vim.keymap.set("n", "<leader>c", change_color_theme)
