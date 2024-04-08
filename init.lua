@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "rebelot/kanagawa.nvim",
   "phaazon/hop.nvim",
-  "nvim-lua/popup.nvim",
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
   "simrat39/symbols-outline.nvim",
