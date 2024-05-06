@@ -99,6 +99,7 @@ local function send_text(text, request_body)
         content_type = "application/json",
         api_key = key,
       },
+      timeout = 60000,
     })
 
   if (response.status == 200) then
