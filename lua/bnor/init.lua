@@ -88,7 +88,6 @@ local function send_text(text, request_body)
   encoded_text = string.sub(encoded_text, 2, string.len(encoded_text) - 1)
   local body_content = string.format(vim.fn.json_encode(request_body), encoded_text)
 
-
   local response = curl.post(
     "https://td-openai-dev.openai.azure.com/" ..
     "openai/deployments/td-openai-dev-gtp4-32k/chat/completions?" ..
