@@ -50,7 +50,6 @@ require("lazy").setup({
       require("local-highlight").setup()
     end,
   },
-  "tpope/vim-commentary",
   "lfv89/vim-interestingwords",
   "nvim-tree/nvim-web-devicons",
   "davidgranstrom/nvim-markdown-preview",
