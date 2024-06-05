@@ -38,11 +38,11 @@ require("lazy").setup({
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x"
   },
-  { "neovim/nvim-lspconfig" },
-  { "hrsh7th/cmp-nvim-lsp" },
-  { "hrsh7th/nvim-cmp" },
-  { "L3MON4D3/LuaSnip" },
-  { "rafamadriz/friendly-snippets" },
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/nvim-cmp",
+  "L3MON4D3/LuaSnip",
+  "rafamadriz/friendly-snippets",
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -72,5 +72,5 @@ require("lazy").setup({
       })
     end
   },
-  { "MunifTanjim/nui.nvim" },
+  "MunifTanjim/nui.nvim",
 })
