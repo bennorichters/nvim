@@ -32,7 +32,7 @@ lsp.configure("lua_ls", {
   }
 })
 
-lsp.configure("pyright")
+lsp.configure("basedpyright")
 
 lsp.configure("rust_analyzer", {
   settings = {
