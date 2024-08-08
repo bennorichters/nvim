@@ -46,4 +46,6 @@ lsp.configure("rust_analyzer", {
 
 lsp.configure("tsserver", {})
 
+lsp.configure("harper_ls", {})
+
 lsp.setup()
